@@ -7,12 +7,12 @@ namespace Trackr
 {
 	public class TaskRepository
 	{
-		private readonly IList<Task> _tasks;
+		private readonly List<Task> _tasks;
 
 		public TaskRepository()
 		{
 			_tasks = new List<Task>();
-			for(int i = 0; i < 100; i++)
+			for(int i = 0; i < 1000; i++)
 			{
 				_tasks.Add(new Task {
 					Number = i,
@@ -48,9 +48,12 @@ namespace Trackr
 			return new { Success = true, Records = new[] { ticket } };
 		}
 
-		public IEnumerable<object> GetAllInfo()
+		public object GetAllInfo(int start, int limit)
 		{
-			return _tasks.Select(t => new { t.Id, t.Number, t.Title, t.Description, t.State });
+			return new {
+				Root = _tasks.Skip(start).Take(limit).Select(t => new { t.Id, t.Number, t.Title, t.Description, t.State }),
+				Total = _tasks.Count()
+			};
 		}
 	}
 }

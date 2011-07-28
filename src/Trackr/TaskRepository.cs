@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -6,26 +7,25 @@ namespace Trackr
 {
 	public class TaskRepository
 	{
-		private readonly Task[] _tasks = new[] {
-			new Task {
-				Title = "Ticket 1",
-				Description = "t1",
-				State = "Opened",
-				Comments = new List<Comment> {
-					new Comment { User = "Gimmi", Text = "Ok" },
-					new Comment { User = "Elena", Text = "No!" },
-				}
-			},
-			new Task {
-				Title = "Ticket 2",
-				Description = "t2",
-				State = "Closed",
-				Comments = new List<Comment> {
-					new Comment { User = "Gimmi", Text = "Ok" },
-					new Comment { User = "Elena", Text = "No!" },
-				}
+		private readonly IList<Task> _tasks;
+
+		public TaskRepository()
+		{
+			_tasks = new List<Task>();
+			for(int i = 0; i < 100; i++)
+			{
+				_tasks.Add(new Task {
+					Number = i,
+					Title = "Ticket #" + i,
+					Description = "Ticket generated @" + DateTime.Now.TimeOfDay.ToString(),
+					State = "Closed",
+					Comments = new List<Comment> {
+						new Comment { User = "Gimmi", Text = "Comment for task #" + i },
+						new Comment { User = "Elena", Text = "Comment for task #" + i },
+					}
+				});
 			}
-		};
+		}
 
 		public IEnumerable<Task> Read()
 		{
@@ -50,7 +50,7 @@ namespace Trackr
 
 		public IEnumerable<object> GetAllInfo()
 		{
-			return _tasks.Select(t => new { t.Id, t.Number, t.Title });
+			return _tasks.Select(t => new { t.Id, t.Number, t.Title, t.Description, t.State });
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿Ext.define('Trackr.store.TaskInfos', {
 	extend: 'Ext.data.Store',
 	model: 'Trackr.model.TaskInfo',
-	autoLoad: true,
+	//autoLoad: true,
 	proxy: {
 		type: 'direct',
 		api: {

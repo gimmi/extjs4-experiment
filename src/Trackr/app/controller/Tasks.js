@@ -1,28 +1,31 @@
 ﻿Ext.define('Trackr.controller.Tasks', {
 	extend: 'Ext.app.Controller',
 
-	models: ['Task', 'Comment', 'TaskInfo'],
-
-	views: [
-		'task.List',
-		'task.Filter',
-		'taskinfo.List'
+	models: [
+		'Task',
+		'Comment',
+		'TaskInfo'
 	],
 
-	init: function () {
+	views: [
+		'taskinfo.List',
+		'taskinfo.ListPanel'
+	],
+
+	init: function() {
 		this.control({
-			'tasklist': {
+			'taskinfolist': {
 				render: this.onTaskListRender,
 				itemdblclick: this.editTask
 			}
 		});
 	},
 
-	onTaskListRender: function (sender) {
+	onTaskListRender: function(sender) {
 		sender.getStore().load();
 	},
 
-	editTask: function (grid, record) {
+	editTask: function(grid, record) {
 		alert('TODO');
 	}
 });

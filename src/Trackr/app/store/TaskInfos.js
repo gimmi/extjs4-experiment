@@ -2,10 +2,10 @@
 	extend: 'Ext.data.Store',
 	model: 'Trackr.model.TaskInfo',
 	pageSize: 50,
-	//autoLoad: true,
+	remoteSort: true,
 	proxy: {
 		type: 'direct',
-		paramOrder: ['start', 'limit'],
+		paramOrder: ['start', 'limit', 'sort'],
 		api: {
 			read: Trackr.server.TaskRepository.getAllInfo
 		},

@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExtDirectHandler">
-      <HintPath>..\..\lib\ExtDirectHandler.0.2.0.2\lib\net40\ExtDirectHandler.dll</HintPath>
+    <Reference Include="ExtDirectHandler, Version=0.2.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\ExtDirectHandler.0.2.0.4\lib\net40\ExtDirectHandler.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">

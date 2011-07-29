@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.controller.Tasks', {
+﻿Ext.define('Trackr.controller.TaskList', {
 	extend: 'Ext.app.Controller',
 
 	models: [
@@ -8,17 +8,17 @@
 	],
 
 	views: [
-		'taskinfo.List',
-		'taskinfo.ListPanel'
+		'tasklist.List',
+		'tasklist.Panel'
 	],
 
 	init: function () {
 		this.control({
-			'taskinfolist': {
+			'tasklistlist': {
 				render: this.onTaskListRender,
 				itemdblclick: this.editTask
 			},
-			'taskinfolistpanel #searchButton': {
+			'tasklistpanel #searchButton': {
 				click: this.searchButtonClick
 			}
 		});
@@ -33,7 +33,7 @@
 	},
 
 	searchButtonClick: function (sender) {
-		var filter = sender.up('taskinfolistpanel').down('#searchText').getValue(); // See http://www.sencha.com/forum/showthread.php?142058
-		sender.up('taskinfolistpanel').down('taskinfolist').getStore().filter('filter', filter);
+		var filter = sender.up('tasklistpanel').down('#searchText').getValue(); // See http://www.sencha.com/forum/showthread.php?142058
+		sender.up('tasklistpanel').down('tasklistlist').getStore().filter('filter', filter);
 	}
 });

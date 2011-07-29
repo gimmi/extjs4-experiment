@@ -6,7 +6,7 @@ Ext.onReady(function () {
 	Ext.create('Ext.app.Application', {
 		name: 'Trackr',
 		autoCreateViewport: true,
-		controllers: ['Tasks'],
+		controllers: ['TaskList'],
 		launch: function () {
 			console.log('app launched');
 		}

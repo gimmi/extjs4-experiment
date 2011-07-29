@@ -8,7 +8,7 @@
 				xtype: 'panel',
 				title: 'Welcome'
 			}, {
-				xtype: 'taskinfolistpanel',
+				xtype: 'tasklistpanel',
 				padding: 10,
 				title: 'Tasks'
 			}, {

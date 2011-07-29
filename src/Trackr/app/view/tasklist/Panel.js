@@ -1,6 +1,6 @@
-﻿Ext.define('Trackr.view.taskinfo.ListPanel', {
+﻿Ext.define('Trackr.view.tasklist.Panel', {
 	extend: 'Ext.panel.Panel',
-	alias: 'widget.taskinfolistpanel',
+	alias: 'widget.tasklistpanel',
 
 	layout: {
 		type: 'vbox',
@@ -32,7 +32,7 @@
 			}]
 		}, {
 			flex: 1,
-			xtype: 'taskinfolist'
+			xtype: 'tasklistlist'
 		}];
 
 		this.callParent(arguments);

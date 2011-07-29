@@ -49,14 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
-    <Content Include="app\controller\Tasks.js" />
+    <Content Include="app\controller\TaskList.js" />
     <Content Include="app\model\Comment.js" />
     <Content Include="app\model\TaskInfo.js" />
     <Content Include="app\model\Task.js" />
     <Content Include="app\store\TaskInfos.js" />
     <Content Include="app\store\Tasks.js" />
-    <Content Include="app\view\taskinfo\List.js" />
-    <Content Include="app\view\taskinfo\ListPanel.js" />
+    <Content Include="app\view\tasklist\List.js" />
+    <Content Include="app\view\tasklist\Panel.js" />
     <Content Include="app\view\Viewport.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />

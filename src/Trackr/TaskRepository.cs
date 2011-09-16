@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using ExtDirectHandler.Configuration;
+using Newtonsoft.Json.Linq;
 
 namespace Trackr
 {
@@ -16,6 +16,7 @@ namespace Trackr
 			for(int i = 0; i < 1000; i++)
 			{
 				_tasks.Add(new Task {
+					Id = i.ToString(),
 					Number = i,
 					Title = "Ticket #" + i,
 					Description = "Ticket generated @" + DateTime.Now.TimeOfDay.ToString(),
@@ -28,9 +29,9 @@ namespace Trackr
 			}
 		}
 
-		public IEnumerable<Task> Read()
+		public Task Read(int id)
 		{
-			return _tasks;
+			return _tasks.Where(t => t.Id == id.ToString()).Single();
 		}
 
 		public void Create(Task ticket)

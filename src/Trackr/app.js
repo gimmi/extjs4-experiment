@@ -1,3 +1,7 @@
+Ext.Loader.setConfig({
+	disableCaching: false
+});
+
 Ext.require('Ext.direct.Manager');
 
 Ext.onReady(function () {
@@ -6,9 +10,13 @@ Ext.onReady(function () {
 	Ext.create('Ext.app.Application', {
 		name: 'Trackr',
 		autoCreateViewport: true,
-		controllers: ['TaskList'],
+		controllers: [
+			'TaskList',
+			'TaskEdit',
+			'Login'
+		],
 		launch: function () {
-			console.log('app launched');
+			Ext.widget('loginwindow').show();
 		}
 	});
 });

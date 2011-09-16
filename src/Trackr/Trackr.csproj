@@ -33,9 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExtDirectHandler, Version=0.2.0.4, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ExtDirectHandler, Version=0.8.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\ExtDirectHandler.0.2.0.4\lib\net40\ExtDirectHandler.dll</HintPath>
+      <HintPath>..\..\lib\ExtDirectHandler.0.8.1\lib\net40\ExtDirectHandler.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
@@ -49,12 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="app\controller\Login.js" />
+    <Content Include="app\controller\TaskEdit.js" />
     <Content Include="app\controller\TaskList.js" />
     <Content Include="app\model\Comment.js" />
     <Content Include="app\model\TaskInfo.js" />
     <Content Include="app\model\Task.js" />
     <Content Include="app\store\TaskInfos.js" />
     <Content Include="app\store\Tasks.js" />
+    <Content Include="app\util\HttpBasicAuthUtils.js" />
+    <Content Include="app\view\login\Window.js" />
+    <Content Include="app\view\taskedit\Panel.js" />
     <Content Include="app\view\tasklist\List.js" />
     <Content Include="app\view\tasklist\Panel.js" />
     <Content Include="app\view\Viewport.js" />
@@ -70,6 +75,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginController.cs" />
     <Compile Include="TaskRepository.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,9 +83,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\view\task\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

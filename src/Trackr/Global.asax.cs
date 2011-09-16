@@ -10,8 +10,9 @@ namespace Trackr
 		protected void Application_Start(object sender, EventArgs e)
 		{
 			DirectHttpHandler.SetMetadata(new ReflectionConfigurator()
+			                              	.SetNamespace("Trackr.server")
 			                              	.RegisterType<TaskRepository>()
-			                              	.BuildMetadata());
+											.RegisterType<LoginController>());
 		}
 
 		protected void Session_Start(object sender, EventArgs e) {}

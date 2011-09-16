@@ -3,17 +3,29 @@
 	layout: 'fit',
 	initComponent: function() {
 		this.items = [{
-			xtype: 'tabpanel',
+			xtype: 'panel',
+			layout: 'card',
 			items: [{
-				xtype: 'panel',
-				title: 'Welcome'
-			}, {
 				xtype: 'tasklistpanel',
-				padding: 10,
-				title: 'Tasks'
+				itemId: 'tasklist',
+				border: 0,
+				padding: 10
 			}, {
-				xtype: 'panel',
-				title: 'Other'
+				xtype: 'taskeditpanel',
+				itemId: 'taskedit',
+				border: 0,
+				padding: 10
+			}],
+			dockedItems: [{
+				xtype: 'toolbar',
+				dock: 'top',
+				items: [{
+					xtype: 'button',
+					text: 'List'
+				}, {
+					xtype: 'button',
+					text: 'Open'
+				}]
 			}]
 		}];
 

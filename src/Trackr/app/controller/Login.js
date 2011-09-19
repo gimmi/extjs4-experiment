@@ -11,12 +11,16 @@
 		{ ref: 'passwordField', selector: 'loginwindow #passwordField' }
 	],
 
-	init: function() {
+	init: function(app) {
 		this.control({
 			'loginwindow #loginButton': {
 				click: this.onLoginButtonClick
 			}
 		});
+
+		if (!app.isAuthenticated()) {
+			Ext.widget('loginwindow').show();
+		}
 	},
 
 	onLoginButtonClick: function() {

@@ -2,7 +2,7 @@ Ext.Loader.setConfig({
 	disableCaching: false
 });
 
-Ext.require('Ext.direct.Manager');
+Ext.require(['Ext.direct.Manager', 'Ext.util.Cookies']);
 
 Ext.onReady(function () {
 	Ext.direct.Manager.addProvider(Trackr.server.REMOTING_API);
@@ -15,8 +15,12 @@ Ext.onReady(function () {
 			'TaskEdit',
 			'Login'
 		],
+
 		launch: function () {
-			Ext.widget('loginwindow').show();
+		},
+
+		isAuthenticated: function () {
+			return !!Ext.util.Cookies.get("auth");
 		}
 	});
 });

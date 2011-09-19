@@ -16,18 +16,21 @@
 		bodyPadding: 10,
 		items: [{
 			xtype: 'textfield',
-			itemId: 'usernameField',
 			name: 'username',
 			fieldLabel: 'User Name',
 			labelWidth: 70,
 			anchor: '100%'
 		}, {
 			xtype: 'textfield',
-			itemId: 'passwordField',
 			name: 'password',
 			inputType: 'password',
 			fieldLabel: 'Password',
 			labelWidth: 70,
+			anchor: '100%'
+		}, {
+			xtype: 'checkboxfield',
+			name: 'keep',
+			boxLabel: 'Keep me signed in',
 			anchor: '100%'
 		}],
 		dockedItems: [{

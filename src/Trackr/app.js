@@ -6,6 +6,9 @@ Ext.require(['Ext.direct.Manager', 'Ext.util.Cookies']);
 
 Ext.onReady(function () {
 	Ext.direct.Manager.addProvider(Trackr.server.REMOTING_API);
+	Ext.direct.Manager.addListener('exception', function (e) {
+		console.error(Ext.String.format('{0}.{1} - {2}', e.action, e.method, e.message));
+	}, this);
 
 	Ext.create('Ext.app.Application', {
 		name: 'Trackr',

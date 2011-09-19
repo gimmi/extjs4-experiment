@@ -7,11 +7,10 @@
 
 	refs: [
 		{ ref: 'window', selector: 'loginwindow' },
-		{ ref: 'usernameField', selector: 'loginwindow #usernameField' },
-		{ ref: 'passwordField', selector: 'loginwindow #passwordField' }
+		{ ref: 'form', selector: 'loginwindow form' }
 	],
 
-	init: function(app) {
+	init: function (app) {
 		this.control({
 			'loginwindow #loginButton': {
 				click: this.onLoginButtonClick
@@ -23,12 +22,10 @@
 		}
 	},
 
-	onLoginButtonClick: function() {
-		var username = this.getUsernameField().getValue();
-		var password = this.getPasswordField().getValue();
-		Trackr.server.LoginController.login(username, password, function(ret) {
+	onLoginButtonClick: function () {
+		var values = this.getForm().getForm().getValues();
+		Trackr.server.LoginController.login(values.username, values.password, !!values.keep, function (ret, e) {
 			if (ret) {
-				Ext.create('Trackr.util.HttpBasicAuthUtils').setAjaxAuth(username, password);
 				this.getWindow().close();
 			} else {
 				Ext.widget('messagebox').alert('Alert', 'Login failed');

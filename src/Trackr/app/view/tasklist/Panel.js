@@ -7,7 +7,7 @@
 		align: 'stretch'
 	},
 
-	initComponent: function() {
+	initComponent: function () {
 		this.items = [{
 			flex: 0,
 			xtype: 'panel',
@@ -33,6 +33,18 @@
 		}, {
 			flex: 1,
 			xtype: 'tasklistlist'
+		}];
+
+		this.dockedItems = [{
+			xtype: 'toolbar',
+			dock: 'top',
+			items: [{
+				xtype: 'button',
+				text: 'List'
+			}, {
+				xtype: 'button',
+				text: 'Open'
+			}]
 		}];
 
 		this.callParent(arguments);

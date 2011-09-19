@@ -6,26 +6,14 @@
 			xtype: 'panel',
 			layout: 'card',
 			items: [{
+				xtype: 'taskeditpanel',
+				itemId: 'taskedit',
+				border: 0
+			}, {
 				xtype: 'tasklistpanel',
 				itemId: 'tasklist',
 				border: 0,
 				padding: 10
-			}, {
-				xtype: 'taskeditpanel',
-				itemId: 'taskedit',
-				border: 0,
-				padding: 10
-			}],
-			dockedItems: [{
-				xtype: 'toolbar',
-				dock: 'top',
-				items: [{
-					xtype: 'button',
-					text: 'List'
-				}, {
-					xtype: 'button',
-					text: 'Open'
-				}]
 			}]
 		}];
 

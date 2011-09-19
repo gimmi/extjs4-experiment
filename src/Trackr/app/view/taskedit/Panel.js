@@ -1,12 +1,14 @@
 ﻿Ext.define('Trackr.view.taskedit.Panel', {
 	extend: 'Ext.form.Panel',
 	alias: 'widget.taskeditpanel',
-
+	
 	layout: {
 		type: 'vbox',
 		align: 'stretch'
 	},
-	
+
+	bodyPadding: 10,
+
 	api: {
 		load: Trackr.server.TaskRepository.load,
 		submit: Trackr.server.TaskRepository.submit
@@ -60,7 +62,7 @@
 				title: 'Comments'
 			}]
 		}];
-
+		
 		this.callParent(arguments);
 	}
 });

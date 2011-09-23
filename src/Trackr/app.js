@@ -1,6 +1,6 @@
 Ext.Loader.setConfig({
-		disableCaching: false
-	});
+	disableCaching: false
+});
 
 Ext.require('Ext.direct.Manager');
 

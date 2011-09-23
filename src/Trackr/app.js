@@ -2,12 +2,12 @@ Ext.Loader.setConfig({
 	disableCaching: false
 });
 
-Ext.require(['Ext.direct.Manager', 'Ext.util.Cookies']);
+Ext.require('Ext.direct.Manager');
 
 Ext.onReady(function () {
 	Ext.direct.Manager.addProvider(Trackr.server.REMOTING_API);
 	Ext.direct.Manager.addListener('exception', function (e) {
-		console.error(Ext.String.format('{0}.{1} - {2}', e.action, e.method, e.message));
+		Ext.Error.raise(Ext.String.format('{0}.{1} - {2}', e.action, e.method, e.message));
 	}, this);
 
 	Ext.create('Ext.app.Application', {
@@ -20,10 +20,6 @@ Ext.onReady(function () {
 		],
 
 		launch: function () {
-		},
-
-		isAuthenticated: function () {
-			return !!Ext.util.Cookies.get("auth");
 		}
 	});
 });

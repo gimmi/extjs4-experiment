@@ -31,7 +31,9 @@
 			xtype: 'checkboxfield',
 			name: 'keep',
 			boxLabel: 'Keep me signed in',
-			anchor: '100%'
+			anchor: '100%',
+			inputValue: true,
+			uncheckedValue: false
 		}],
 		dockedItems: [{
 			xtype: 'toolbar',

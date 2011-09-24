@@ -62,7 +62,6 @@
     <Content Include="app\view\taskedit\Panel.js" />
     <Content Include="app\view\tasklist\List.js" />
     <Content Include="app\view\tasklist\Panel.js" />
-    <Content Include="app\view\Viewport.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="tests.html" />

@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.view.tasklist.List', {
+Ext.define('Trackr.view.tasklist.List', {
 	extend: 'Ext.grid.Panel',
 	alias: 'widget.tasklistlist',
 

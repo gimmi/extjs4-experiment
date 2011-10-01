@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.store.TaskInfos', {
+Ext.define('Trackr.store.TaskInfos', {
 	extend: 'Ext.data.Store',
 	model: 'Trackr.model.TaskInfo',
 	pageSize: 50,

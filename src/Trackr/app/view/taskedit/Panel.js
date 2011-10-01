@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.view.taskedit.Panel', {
+Ext.define('Trackr.view.taskedit.Panel', {
 	extend: 'Ext.form.Panel',
 	alias: 'widget.taskeditpanel',
 	

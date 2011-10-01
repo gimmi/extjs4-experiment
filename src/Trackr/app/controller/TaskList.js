@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.controller.TaskList', {
+Ext.define('Trackr.controller.TaskList', {
 	extend: 'Ext.app.Controller',
 
 	models: [

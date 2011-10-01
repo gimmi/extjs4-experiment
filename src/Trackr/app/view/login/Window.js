@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.view.login.Window', {
+Ext.define('Trackr.view.login.Window', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.loginwindow',
 

@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.util.HttpBasicAuthUtils', {
+Ext.define('Trackr.util.HttpBasicAuthUtils', {
 	setAjaxAuth: function (username, password) {
 		Ext.Ajax.defaultHeaders = Ext.Ajax.defaultHeaders || {};
 		Ext.Ajax.defaultHeaders['Authorization'] = 'Basic ' + this.base64_encode(username + ':' + password);

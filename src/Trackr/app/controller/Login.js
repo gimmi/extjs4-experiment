@@ -1,4 +1,4 @@
-﻿Ext.define('Trackr.controller.Login', {
+Ext.define('Trackr.controller.Login', {
 	extend: 'Ext.app.Controller',
 
 	views: [

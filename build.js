@@ -23,3 +23,14 @@ task('buildjs', function () {
 		fs.writeFile(mainFile.replace('-dev.js', '.js'), content);
 	});
 });
+
+task('jsdeps', function () {
+	jsmake.Sys.createRunner('tools/phantomjs/phantomjs.exe').args('tools/dependencies/dependencies.js')
+		.args('src/Trackr')
+		.args('extjs')
+		.args('ext-dev.js')
+		.args('Trackr')
+		.args('app')
+		.args('Ext.app.Application')
+		.run();
+});

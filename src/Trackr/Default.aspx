@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="rpc"> </script>
 		<script type="text/javascript">
 		Ext.Loader.setConfig({
-			enabled: true,
+			enabled: <%=DynamicLoaderEnabled%>,
 			disableCaching: false
 		});
 		Ext.Loader.setPath('Ext', 'extjs/src');

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Web.UI;
 
 namespace Trackr
@@ -8,7 +7,12 @@ namespace Trackr
 	{
 		public bool IsDevelopmentEnvironment
 		{
-			get { return Convert.ToBoolean(ConfigurationSettings.AppSettings["DevelopmentEnvironment"]); }
+			get { return Convert.ToBoolean(Request.QueryString.Get("debug")); }
+		}
+
+		public string DynamicLoaderEnabled
+		{
+			get { return IsDevelopmentEnvironment ? "true" : "false"; }
 		}
 
 		public string PageName
@@ -18,7 +22,7 @@ namespace Trackr
 
 		public string AppCodeFile
 		{
-			get { return string.Format("{0}{1}.js", PageName, IsDevelopmentEnvironment ? "" : "-all"); }
+			get { return string.Format("{0}{1}.js", PageName, IsDevelopmentEnvironment ? "-dev" : ""); }
 		}
 
 		public string ExtCodeFile

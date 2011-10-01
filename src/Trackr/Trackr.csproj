@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="main.js" />
     <Content Include="app\controller\Login.js" />
     <Content Include="app\controller\TaskEdit.js" />
     <Content Include="app\controller\TaskList.js" />
@@ -63,9 +62,10 @@
     <Content Include="app\view\taskedit\Panel.js" />
     <Content Include="app\view\tasklist\List.js" />
     <Content Include="app\view\tasklist\Panel.js" />
-    <Content Include="login.js" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="login-dev.js" />
+    <Content Include="main-dev.js" />
     <Content Include="tests.html" />
     <Content Include="tests.js" />
     <Content Include="test\TaskTest.js" />
@@ -101,8 +101,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54697</DevelopmentServerPort>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8080</DevelopmentServerPort>
           <DevelopmentServerVPath>/vdir</DevelopmentServerVPath>
           <IISUrl>http://localhost:54697/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

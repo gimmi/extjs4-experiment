@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app\Main.js" />
+    <Content Include="app\app\Login.js" />
     <Content Include="app\controller\Login.js" />
     <Content Include="app\controller\TaskEdit.js" />
     <Content Include="app\controller\TaskList.js" />

@@ -47,7 +47,7 @@ page.onLoadFinished = function (status) {
 		clearInterval(intervalId);
 		var files = page.evaluate(function () {
 			return Ext.Array.map(Ext.Loader.history, function (item) {
-				return { name: item, path: Ext.Loader.getPath(item) };
+				return Ext.Loader.getPath(item);
 			});
 		});
 		console.log(files.length + ' dependencies found');

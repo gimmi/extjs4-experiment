@@ -15,3 +15,5 @@ src/**/*.user
 # Intellij Idea
 /.idea/
 /*.iml
+# too big to inglude in repository
+/tools/phantomjs

@@ -10,24 +10,24 @@ namespace Trackr
 			get { return Convert.ToBoolean(Request.QueryString.Get("debug")); }
 		}
 
-		public string DynamicLoaderEnabled
-		{
-			get { return IsDevelopmentEnvironment ? "true" : "false"; }
-		}
-
 		public string PageName
 		{
 			get { return Request.QueryString.Get("page") ?? "login"; }
 		}
 
-		public string AppCodeFile
+		public string AppScriptTag
 		{
-			get { return string.Format("{0}{1}.js", PageName, IsDevelopmentEnvironment ? "-dev" : ""); }
+			get { return IsDevelopmentEnvironment ? "" : string.Format("<script type='text/javascript' src='{0}.js'> </script>", PageName); }
 		}
 
 		public string ExtCodeFile
 		{
-			get { return string.Format("ext{0}.js", IsDevelopmentEnvironment ? "-dev" : "-all"); }
+			get { return string.Format("ext{0}.js", IsDevelopmentEnvironment ? "-dev" : ""); }
+		}
+
+		protected string MainClass
+		{
+			get { return string.Format("Trackr.app.{0}", PageName.Substring(0, 1).ToUpperInvariant() + PageName.Substring(1)); }
 		}
 	}
 }

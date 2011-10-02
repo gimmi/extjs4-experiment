@@ -2,6 +2,11 @@ Ext.define('Trackr.view.login.Window', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.loginwindow',
 
+	requires: [
+		'Ext.form.Panel',
+		'Ext.form.field.Checkbox',
+	],
+
 	height: 150,
 	width: 300,
 	layout: {

@@ -10,6 +10,11 @@ namespace Trackr
 			get { return Convert.ToBoolean(Request.QueryString.Get("debug")); }
 		}
 
+		public string IsExtLoaderEnabled
+		{
+			get { return IsDevelopmentEnvironment ? "true" : "false"; }
+		}
+
 		public string PageName
 		{
 			get { return Request.QueryString.Get("page") ?? "login"; }

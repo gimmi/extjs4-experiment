@@ -10,7 +10,7 @@ var html = [
 	'			Ext.Loader.setConfig({ enabled: true });',
 	'			Ext.Loader.setPath("Ext", "@extpath/src");',
 	'			Ext.Loader.setPath("@appname", "@apppath");',
-	'			Ext.require("Ext.direct.Manager");',
+	'			Ext.require("Ext.direct.*");',
 	'			Ext.require("@appclass");',
 	'		</script>',
 	'	</head>',
@@ -28,7 +28,6 @@ fs.write(htmlFile, html, "w");
 var page = require('webpage').create();
 page.onConsoleMessage = function (msg) { 
 	console.log('Page log: ' + msg);
-	phantom.exit(1);
 };
 page.onLoadFinished = function (status) {
 	if (status !== 'success') {

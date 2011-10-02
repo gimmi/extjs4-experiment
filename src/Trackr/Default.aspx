@@ -5,16 +5,16 @@
 		<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
 		<script type="text/javascript" src="extjs/<%=ExtCodeFile%>"> </script>
 		<script type="text/javascript" src="rpc"> </script>
-		<script type="text/javascript">
-			Ext.Loader.setConfig({ enabled: true, disableCaching: false });
-			Ext.Loader.setPath('Ext', 'extjs/src');
-			Ext.Loader.setPath('Trackr', 'app');
-		</script>
 		<%=AppScriptTag%>
 		<script type="text/javascript">
-			Ext.syncRequire('Ext.direct.Manager');
-			Ext.direct.Manager.addProvider(Trackr.server.REMOTING_API);
-			Ext.create('<%=MainClass%>', { name: 'Trackr', appFolder: 'app' });
+			Ext.Loader.setConfig({ enabled: <%=IsExtLoaderEnabled%> , disableCaching: false });
+			Ext.Loader.setPath('Ext', 'extjs/src');
+			Ext.Loader.setPath('Trackr', 'app');
+			Ext.require(['Ext.direct.*', '<%=MainClass%>']);
+			Ext.onReady(function() {
+				Ext.direct.Manager.addProvider(Trackr.server.REMOTING_API);
+				new <%=MainClass%> ({ name: 'Trackr', appFolder: 'app' });
+			});
 		</script>
 	</head>
 	<body></body>

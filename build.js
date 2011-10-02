@@ -21,6 +21,7 @@ task('jsbuild', function () {
 		var contents = utils.map(files, function (file) {
 			return fs.readFile(fs.combinePaths('src/Trackr', file));
 		});
-		fs.writeFile(fs.combinePaths('src/Trackr', jsApp.file), contents.join('\n'));
+		var content = uglifyjs(contents.join('\n'));
+		fs.writeFile(fs.combinePaths('src/Trackr', jsApp.file), content);
 	});
 });

@@ -1,5 +1,10 @@
 var fs = require('fs');
 
+var requires = [];
+phantom.args.slice(5).forEach(function (require) {
+	requires.push('"' + require + '"');
+});
+
 var htmlFile = fs.absolute(phantom.args[0] + "/dependencies.html");
 var html = [
 	'<html>',
@@ -10,8 +15,7 @@ var html = [
 	'			Ext.Loader.setConfig({ enabled: true });',
 	'			Ext.Loader.setPath("Ext", "@extpath/src");',
 	'			Ext.Loader.setPath("@appname", "@apppath");',
-	'			Ext.require("Ext.direct.*");',
-	'			Ext.require("@appclass");',
+	'			Ext.require([ @requires ]);',
 	'		</script>',
 	'	</head>',
 	'	<body></body>',
@@ -21,7 +25,7 @@ var html = [
 .replace(/@extfile/g, phantom.args[2])
 .replace(/@appname/g, phantom.args[3])
 .replace(/@apppath/g, phantom.args[4])
-.replace(/@appclass/g, phantom.args[5]);
+.replace(/@requires/g, requires.join(', '));
 
 fs.write(htmlFile, html, "w");
 

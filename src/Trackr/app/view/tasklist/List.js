@@ -1,6 +1,8 @@
 Ext.define('Trackr.view.tasklist.List', {
 	extend: 'Ext.grid.Panel',
 	alias: 'widget.tasklistlist',
+	
+	requires: [ 'Trackr.store.TaskInfos' ],
 
 	initComponent: function () {
 		this.store = Ext.create('Trackr.store.TaskInfos');

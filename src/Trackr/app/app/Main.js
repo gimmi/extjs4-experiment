@@ -1,6 +1,11 @@
 Ext.define('Trackr.app.Main', {
 	extend: 'Ext.app.Application',
 
+	requires: [
+		'Trackr.controller.TaskList',
+		'Trackr.controller.TaskEdit'
+	],
+
 	controllers: [
 		'TaskList',
 		'TaskEdit'

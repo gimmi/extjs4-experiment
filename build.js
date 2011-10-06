@@ -15,7 +15,7 @@ task('default', 'jsbuild');
 task('jsbuild', function () {
 	utils.each(jsApps, function (jsApp) {
 		sys.createRunner('tools/phantomjs/phantomjs.exe').args('tools/dependencies/dependencies.js')
-			.args('src/Trackr', 'extjs', 'ext-dev.js', 'Trackr', 'app', jsApp.appclass)
+			.args('src/Trackr', 'extjs', 'ext-all-dev.js', 'Trackr', 'app', jsApp.appclass)
 			.run();
 		var files = JSON.parse(fs.readFile('dependencies.json'));
 		var contents = utils.map(files, function (file) {

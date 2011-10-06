@@ -27,7 +27,7 @@ namespace Trackr
 
 		public string ExtCodeFile
 		{
-			get { return string.Format("ext{0}.js", IsDevelopmentEnvironment ? "-dev" : ""); }
+			get { return string.Format("ext-all{0}.js", IsDevelopmentEnvironment ? "-dev" : ""); }
 		}
 
 		protected string MainClass

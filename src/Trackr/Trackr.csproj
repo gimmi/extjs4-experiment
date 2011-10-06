@@ -67,8 +67,6 @@
     <Content Include="app\view\tasklist\Panel.js" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="login-dev.js" />
-    <Content Include="main-dev.js" />
     <Content Include="tests.html" />
     <Content Include="tests.js" />
     <Content Include="test\TaskTest.js" />
@@ -93,9 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.jsb3" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

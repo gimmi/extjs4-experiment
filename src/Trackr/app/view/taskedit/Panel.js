@@ -1,7 +1,7 @@
 Ext.define('Trackr.view.taskedit.Panel', {
 	extend: 'Ext.form.Panel',
 	alias: 'widget.taskeditpanel',
-	
+
 	layout: {
 		type: 'vbox',
 		align: 'stretch'
@@ -9,26 +9,31 @@ Ext.define('Trackr.view.taskedit.Panel', {
 
 	bodyPadding: 10,
 
-	api: {
-		load: Trackr.server.TaskRepository.load,
-		submit: Trackr.server.TaskRepository.submit
-	},
-	
 	dockedItems: [{
-        xtype: 'toolbar',
-        dock: 'top',
-        items: [{
-        	xtype: 'button',
-            text: 'Back to list',
-        	itemId: 'backButton'
-        }, {
-        	xtype: 'button',
-            text: 'Save',
-        	itemId: 'saveButton'
-        }]
-    }],
-	
-	initComponent: function() {
+		xtype: 'toolbar',
+		dock: 'top',
+		items: [{
+			xtype: 'button',
+			text: 'Back to list',
+			itemId: 'backButton'
+		}, {
+			xtype: 'button',
+			text: 'Save',
+			itemId: 'saveButton'
+		}]
+	}],
+
+	constructor: function (config) {
+		// Workaround for http://www.sencha.com/forum/showthread.php?149305
+		config.api = {
+			load: Trackr.server.TaskRepository.load,
+			submit: Trackr.server.TaskRepository.submit
+		};
+
+		this.callParent(arguments);
+	},
+
+	initComponent: function () {
 		this.items = [{
 			flex: 0,
 			xtype: 'panel',
@@ -62,7 +67,7 @@ Ext.define('Trackr.view.taskedit.Panel', {
 				title: 'Comments'
 			}]
 		}];
-		
+
 		this.callParent(arguments);
 	}
 });

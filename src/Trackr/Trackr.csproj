@@ -54,6 +54,7 @@
     <Content Include="app\controller\Login.js" />
     <Content Include="app\controller\TaskEdit.js" />
     <Content Include="app\controller\TaskList.js" />
+    <Content Include="app\data\proxy\Direct.js" />
     <Content Include="app\model\Comment.js" />
     <Content Include="app\model\TaskInfo.js" />
     <Content Include="app\model\Task.js" />
@@ -96,6 +97,7 @@
   <ItemGroup>
     <None Include="app.jsb3" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

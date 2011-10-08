@@ -52,6 +52,7 @@
   <ItemGroup>
     <Content Include="app\app\Main.js" />
     <Content Include="app\app\Login.js" />
+    <Content Include="app\controller\Main.js" />
     <Content Include="app\controller\Login.js" />
     <Content Include="app\controller\TaskEdit.js" />
     <Content Include="app\controller\TaskList.js" />
@@ -63,6 +64,7 @@
     <Content Include="app\store\Tasks.js" />
     <Content Include="app\util\HttpBasicAuthUtils.js" />
     <Content Include="app\view\login\Window.js" />
+    <Content Include="app\view\main\Viewport.js" />
     <Content Include="app\view\taskedit\Panel.js" />
     <Content Include="app\view\tasklist\List.js" />
     <Content Include="app\view\tasklist\Panel.js" />

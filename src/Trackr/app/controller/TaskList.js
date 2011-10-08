@@ -22,9 +22,6 @@ Ext.define('Trackr.controller.TaskList', {
 				click: this.searchButtonClick
 			}
 		});
-		//		this.application.addListener({
-		//			scope: this
-		//		});
 	},
 
 	onTaskListRender: function (sender) {
@@ -32,8 +29,7 @@ Ext.define('Trackr.controller.TaskList', {
 	},
 
 	editTask: function (grid, record) {
-		alert('TODO');
-		// this.application.fireEvent('trackr-taskselected', record.getId());
+		this.application.fireEvent('trackr-taskselected', record.getId());
 	},
 
 	searchButtonClick: function (sender) {

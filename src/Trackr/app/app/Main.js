@@ -3,30 +3,18 @@ Ext.define('Trackr.app.Main', {
 
 	requires: [
 		'Trackr.controller.TaskList',
-		'Trackr.controller.TaskEdit'
+		'Trackr.controller.TaskEdit',
+		'Trackr.controller.Main',
+		'Trackr.view.main.Viewport'
 	],
 
 	controllers: [
 		'TaskList',
-		'TaskEdit'
+		'TaskEdit',
+		'Main'
 	],
 
 	launch: function() {
-		Ext.widget('viewport', {
-			layout: 'fit',
-			items: [{
-				xtype: 'panel',
-				layout: 'card',
-				items: [{
-					xtype: 'tasklistpanel',
-					itemId: 'tasklist',
-					border: 0
-				}, {
-					xtype: 'taskeditpanel',
-					itemId: 'taskedit',
-					border: 0
-				}]
-			}]
-		});
+		Ext.widget('mainviewport');
 	}
 });

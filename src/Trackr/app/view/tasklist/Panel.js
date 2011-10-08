@@ -7,7 +7,21 @@ Ext.define('Trackr.view.tasklist.Panel', {
 		align: 'stretch'
 	},
 
-	initComponent: function () {
+	bodyPadding: 10,
+
+	dockedItems: [{
+		xtype: 'toolbar',
+		dock: 'top',
+		items: [{
+			xtype: 'button',
+			text: 'List'
+		}, {
+			xtype: 'button',
+			text: 'Open'
+		}]
+	}],
+	
+	initComponent: function() {
 		this.items = [{
 			flex: 0,
 			xtype: 'panel',
@@ -33,18 +47,6 @@ Ext.define('Trackr.view.tasklist.Panel', {
 		}, {
 			flex: 1,
 			xtype: 'tasklistlist'
-		}];
-
-		this.dockedItems = [{
-			xtype: 'toolbar',
-			dock: 'top',
-			items: [{
-				xtype: 'button',
-				text: 'List'
-			}, {
-				xtype: 'button',
-				text: 'Open'
-			}]
 		}];
 
 		this.callParent(arguments);

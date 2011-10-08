@@ -18,14 +18,13 @@ Ext.define('Trackr.app.Main', {
 				xtype: 'panel',
 				layout: 'card',
 				items: [{
+					xtype: 'tasklistpanel',
+					itemId: 'tasklist',
+					border: 0
+				}, {
 					xtype: 'taskeditpanel',
 					itemId: 'taskedit',
 					border: 0
-				}, {
-					xtype: 'tasklistpanel',
-					itemId: 'tasklist',
-					border: 0,
-					padding: 10
 				}]
 			}]
 		});

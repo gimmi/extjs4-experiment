@@ -16,7 +16,8 @@ Ext.define('Trackr.controller.TaskList', {
 		this.control({
 			'tasklistlist': {
 				render: this.onTaskListRender,
-				itemdblclick: this.editTask
+				itemdblclick: this.editTask,
+				itemcontextmenu: this.taskContextMenu
 			},
 			'tasklistpanel #searchButton': {
 				click: this.searchButtonClick
@@ -35,5 +36,15 @@ Ext.define('Trackr.controller.TaskList', {
 	searchButtonClick: function (sender) {
 		var filter = sender.up('tasklistpanel').down('#searchText').getValue(); // See http://www.sencha.com/forum/showthread.php?142058
 		sender.up('tasklistpanel').down('tasklistlist').getStore().filter('filter', filter);
+	},
+
+	taskContextMenu: function (sender, record, item, index, e, eOpts) {
+		var menu = Ext.create('Ext.menu.Menu', {
+			items: [{
+				text: 'Edit'
+			}]
+		});
+		menu.showAt(e.getXY());
+		e.stopEvent();
 	}
 });

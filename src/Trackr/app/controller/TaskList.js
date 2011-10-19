@@ -12,15 +12,24 @@ Ext.define('Trackr.controller.TaskList', {
 		'tasklist.Panel'
 	],
 
+	refs: [
+		{ ref: 'listPanel', selector: 'tasklistpanel' },
+		{ ref: 'openButton', selector: 'tasklistpanel #open-button' }
+	],
+
 	init: function () {
 		this.control({
 			'tasklistlist': {
 				render: this.onTaskListRender,
 				itemdblclick: this.editTask,
-				itemcontextmenu: this.taskContextMenu
+				itemcontextmenu: this.taskContextMenu,
+				selectionchange: this.onSelectionChange
 			},
 			'tasklistpanel #searchButton': {
 				click: this.searchButtonClick
+			},
+			'tasklistpanel #open-button': {
+				click: this.editTask
 			}
 		});
 	},
@@ -29,7 +38,8 @@ Ext.define('Trackr.controller.TaskList', {
 		sender.getStore().load();
 	},
 
-	editTask: function (grid, record) {
+	editTask: function () {
+		var record = this.getListPanel().down('tasklistlist').getSelectionModel().getLastSelected();
 		this.application.fireEvent('trackr-taskselected', record.getId());
 	},
 
@@ -46,5 +56,9 @@ Ext.define('Trackr.controller.TaskList', {
 		});
 		menu.showAt(e.getXY());
 		e.stopEvent();
+	},
+
+	onSelectionChange: function (selModel, records) {
+		this.getOpenButton().setDisabled(records.length !== 1);
 	}
 });

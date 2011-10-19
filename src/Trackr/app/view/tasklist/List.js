@@ -15,15 +15,26 @@ Ext.define('Trackr.view.tasklist.List', {
 		mode: 'MULTI'
 	},
 
+	dockedItems: [{
+		xtype: 'toolbar',
+		dock: 'top',
+		items: [{
+			xtype: 'button',
+			itemId: 'open-button',
+			text: 'Open',
+			disabled: true
+		}]
+	}],
+
 	initComponent: function () {
 		this.store = Ext.create('Trackr.store.TaskInfos');
 
-		this.dockedItems = [{
+		this.dockedItems.push({
 			dock: 'bottom',
 			xtype: 'pagingtoolbar',
 			store: this.store,
 			displayInfo: true
-		}];
+		});
 		
 		this.callParent(arguments);
 	}

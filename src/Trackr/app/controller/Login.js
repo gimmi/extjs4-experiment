@@ -21,7 +21,7 @@ Ext.define('Trackr.controller.Login', {
 	},
 
 	onLaunch: function () {
-		Trackr.server.LoginController.isAuthenticated(function (ret) {
+		Server.LoginController.isAuthenticated(function (ret) {
 			if (!ret) {
 				Ext.widget('loginwindow').show();
 			}
@@ -30,7 +30,7 @@ Ext.define('Trackr.controller.Login', {
 
 	onLoginButtonClick: function () {
 		var values = this.getForm().getForm().getValues();
-		Trackr.server.LoginController.login(values.username, values.password, values.keep, function (ret, e) {
+		Server.LoginController.login(values.username, values.password, values.keep, function (ret, e) {
 			if (ret) {
 				this.getWindow().close();
 				this.application.fireEvent('trackr-authenticated');

@@ -17,7 +17,7 @@ namespace Trackr
 			IContainer container = builder.Build();
 
 			DirectHttpHandler.SetMetadata(new ReflectionConfigurator()
-			                              	.SetNamespace("Trackr.server")
+			                              	.SetNamespace("Server")
 			                              	.RegisterType<TaskRepository>()
 			                              	.RegisterType<LoginController>());
 

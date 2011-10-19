@@ -26,8 +26,8 @@ Ext.define('Trackr.view.taskedit.Panel', {
 	constructor: function (config) {
 		// Workaround for http://www.sencha.com/forum/showthread.php?149305
 		config.api = {
-			load: Trackr.server.TaskRepository.load,
-			submit: Trackr.server.TaskRepository.submit
+			load: Server.TaskRepository.load,
+			submit: Server.TaskRepository.submit
 		};
 
 		this.callParent(arguments);

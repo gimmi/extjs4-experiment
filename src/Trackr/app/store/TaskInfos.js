@@ -9,7 +9,7 @@ Ext.define('Trackr.store.TaskInfos', {
 		type: 'direct2',
 		paramOrder: ['start', 'limit', 'sort', 'filter'],
 		api: {
-			read: 'Trackr.server.TaskRepository.getAllInfo'
+			read: 'Server.TaskRepository.getAllInfo'
 		},
 		reader: {
 			type: 'json',

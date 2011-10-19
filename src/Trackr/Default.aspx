@@ -12,7 +12,7 @@
 			Ext.Loader.setPath('Trackr', 'app');
 			Ext.require(['Ext.direct.*', 'Trackr.app.Main']);
 			Ext.onReady(function() {
-				Ext.direct.Manager.addProvider(Trackr.server.REMOTING_API);
+				Ext.direct.Manager.addProvider(Server.REMOTING_API);
 				Ext.create('Trackr.app.Main', { name: 'Trackr', appFolder: 'app' });
 			});
 		</script>

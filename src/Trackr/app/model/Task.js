@@ -8,10 +8,10 @@ Ext.define('Trackr.model.Task', {
 		// batchActions: false,
 		paramOrder: ['id'], // Seems that are considered only for read operation
 		api: {
-			create: 'Trackr.server.TaskRepository.create',
-			read: 'Trackr.server.TaskRepository.read',
-			update: 'Trackr.server.TaskRepository.update',
-			destroy: 'Trackr.server.TaskRepository.destroy'
+			create: 'Server.TaskRepository.create',
+			read: 'Server.TaskRepository.read',
+			update: 'Server.TaskRepository.update',
+			destroy: 'Server.TaskRepository.destroy'
 		}
 	}
 });

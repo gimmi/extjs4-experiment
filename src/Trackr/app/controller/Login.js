@@ -12,7 +12,7 @@ Ext.define('Trackr.controller.Login', {
 		{ ref: 'form', selector: 'loginwindow form' }
 	],
 
-	init: function() {
+	init: function () {
 		this.control({
 			'loginwindow #loginButton': {
 				click: this.onLoginButtonClick
@@ -20,17 +20,20 @@ Ext.define('Trackr.controller.Login', {
 		});
 	},
 
-	onLaunch: function() {
-		if (!Ext.util.Cookies.get("auth")) {
-			Ext.widget('loginwindow').show();
-		}
+	onLaunch: function () {
+		Trackr.server.LoginController.isAuthenticated(function (ret) {
+			if (!ret) {
+				Ext.widget('loginwindow').show();
+			}
+		});
 	},
 
-	onLoginButtonClick: function() {
+	onLoginButtonClick: function () {
 		var values = this.getForm().getForm().getValues();
-		Trackr.server.LoginController.login(values.username, values.password, values.keep, function(ret, e) {
+		Trackr.server.LoginController.login(values.username, values.password, values.keep, function (ret, e) {
 			if (ret) {
 				this.getWindow().close();
+				this.application.fireEvent('trackr-authenticated');
 			} else {
 				Ext.widget('messagebox').alert('Alert', 'Login failed');
 			}

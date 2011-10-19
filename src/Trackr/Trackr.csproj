@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app\Main.js" />
-    <Content Include="app\app\Login.js" />
     <Content Include="app\controller\Main.js" />
     <Content Include="app\controller\Login.js" />
     <Content Include="app\controller\TaskEdit.js" />

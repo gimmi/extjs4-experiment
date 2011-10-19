@@ -29,10 +29,5 @@ namespace Trackr
 		{
 			get { return string.Format("ext-all{0}.js", IsDevelopmentEnvironment ? "-dev" : ""); }
 		}
-
-		protected string MainClass
-		{
-			get { return string.Format("Trackr.app.{0}", PageName.Substring(0, 1).ToUpperInvariant() + PageName.Substring(1)); }
-		}
 	}
 }

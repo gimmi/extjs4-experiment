@@ -15,14 +15,9 @@ namespace Trackr
 			get { return IsDevelopmentEnvironment ? "true" : "false"; }
 		}
 
-		public string PageName
-		{
-			get { return Request.QueryString.Get("page") ?? "login"; }
-		}
-
 		public string AppScriptTag
 		{
-			get { return IsDevelopmentEnvironment ? "" : string.Format("<script type='text/javascript' src='{0}.js'> </script>", PageName); }
+			get { return IsDevelopmentEnvironment ? "" : "<script type='text/javascript' src='main.js'> </script>"; }
 		}
 
 		public string ExtCodeFile

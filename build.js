@@ -9,7 +9,7 @@ task('default', 'jsbuild');
 
 task('jsbuild', function () {
 	sys.createRunner('tools/phantomjs/phantomjs.exe').args('tools/dependencies/dependencies.js')
-		.args('src/Trackr', 'extjs', 'ext-all-dev.js', 'Trackr', 'app', 'Trackr.app.Main')
+		.args('src/Trackr', 'extjs', 'ext-all-dev.js', 'Trackr', 'js', 'Trackr.app.Main')
 		.run();
 	var files = JSON.parse(fs.readFile('dependencies.json'));
 	var contents = utils.map(files, function (file) {

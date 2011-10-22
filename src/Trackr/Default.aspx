@@ -10,7 +10,7 @@
 			Ext.Loader.setConfig({ enabled: <%=IsExtLoaderEnabled%> , disableCaching: false });
 			Ext.Loader.setPath('Ext', 'extjs/src');
 			Ext.Loader.setPath('Trackr', 'js');
-			Ext.require('Ext.direct.*');
+			Ext.require(['Ext.direct.*', 'Trackr.app.Main']);
 			Ext.onReady(function() {
 				Ext.direct.Manager.addProvider(Server.REMOTING_API);
 				Ext.create('Trackr.app.Main', { name: 'Trackr', appFolder: 'js' });

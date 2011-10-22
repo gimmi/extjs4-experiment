@@ -20,7 +20,7 @@ Ext.define('Trackr.controller.Main', {
 	onLaunch: function () {
 	},
 	
-	taskSelected: function (id) {
+	taskSelected: function (taskId) {
 		this.getMainPanel().getLayout().setActiveItem(1);
 	},
 

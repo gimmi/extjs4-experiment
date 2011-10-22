@@ -10,21 +10,26 @@ Ext.define('Trackr.controller.TaskEdit', {
 		'taskedit.Panel'
 	],
 
+	refs: [
+		{ ref: 'editPanel', selector: 'taskeditpanel' }
+	],
+
 	init: function () {
 		this.control({
-			'taskeditpanel': {
-				render: this.onTaskEditRender
-			},
 			'taskeditpanel #saveButton': {
 				click: this.onSaveButtonClick
 			}
 		});
+		this.application.addListener({
+			'trackr-taskselected': this.taskSelected,
+			scope: this
+		});
 	},
 
-	onTaskEditRender: function (sender) {
-		Trackr.model.Task.load(1, {
+	taskSelected: function (taskId) {
+		Trackr.model.Task.load(taskId, {
 			success: function (record) {
-				sender.loadRecord(record);
+				this.getEditPanel().loadRecord(record);
 			},
 			scope: this
 		});
